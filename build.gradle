@@ -1,17 +1,25 @@
 plugins {
     id 'java'
+    id 'war'
 }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
+group = 'infinity.server.v2'
+version = '1.0'
+
+webAppDirName = "src/main/webapp"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.springframework:spring-web:5.3.22'
+    implementation 'org.springframework:spring-context:5.3.22'
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    implementation 'org.springframework:spring-webmvc:5.3.8'
+
+    implementation 'com.google.code.gson:gson:2.8.8'
+
 }
 
 test {
