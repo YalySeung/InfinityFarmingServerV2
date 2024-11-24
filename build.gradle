@@ -13,16 +13,32 @@ repositories {
 }
 
 dependencies {
+    //spring
     implementation 'org.springframework:spring-web:5.3.22'
     implementation 'org.springframework:spring-context:5.3.22'
     implementation 'javax.servlet:javax.servlet-api:4.0.1'
     implementation 'org.springframework:spring-webmvc:5.3.8'
 
+    //util
     implementation 'com.google.code.gson:gson:2.8.8'
 
     //lombok
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    //log
+    implementation 'ch.qos.logback:logback-classic:1.4.11'
+
+    //time
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.5'
+
+    // JSONPath 라이브러리 추가
+    testImplementation 'com.jayway.jsonpath:json-path:2.8.0'
+
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.springframework:spring-test:5.3.22'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 test {

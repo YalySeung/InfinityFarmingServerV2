@@ -15,17 +15,21 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
-    @GetMapping("/list")
+    @GetMapping("")
     @ResponseBody
     public UserListResponse getUserList(){
-        User user = new User(1, "testUSer", LocalDate.now(), LocalDate.now());
+        User user = User.builder()
+                .userSeq(1)
+                .id("testUser")
+                .lastLoginTime(LocalDate.now())
+                .registTime(LocalDate.now())
+                .build();
 
         List<User> userList = new ArrayList();
         userList.add(user);
 
-        UserListResponse userListResponse = new UserListResponse();
-        userListResponse.setUserList(userList);
-
-        return userListResponse;
+        return UserListResponse.builder()
+                .userList(userList)
+                .build();
     }
 }
